@@ -7,7 +7,9 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-//require("/routes/apiRoutes")(app);
+app.use(express.static("./public")) //needed for static files such as css, js, files referenced in your html
+
+require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 app.listen(PORT, function() {
