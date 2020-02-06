@@ -25,4 +25,4 @@ Direct link to website: https://mjpalacios25.github.io/NoteTaker/
 
 
 ## Application Demo
-![](/public/Demo.gif)
+![](public/Demo.gif)
