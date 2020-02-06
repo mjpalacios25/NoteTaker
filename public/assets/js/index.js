@@ -51,7 +51,11 @@ var renderActiveNote = function() {
 
 // Get the note data from the inputs, save it to the db and update the view
 var handleNoteSave = function() {
+  getNotes().then(function(data){
+      var noteCount = data.length++;
+  console.log(noteCount);
   var newNote = {
+    id: noteCount,
     title: $noteTitle.val(),
     text: $noteText.val()
   };
@@ -60,6 +64,8 @@ var handleNoteSave = function() {
     getAndRenderNotes();
     renderActiveNote();
   });
+  })
+
 };
 
 // Delete the clicked note

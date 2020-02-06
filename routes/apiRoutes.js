@@ -14,7 +14,10 @@ module.exports = function(app){
     app.delete("/api/notes/:id", function(req, res){
 
         console.log(req.params.id);
-            
+        let id = req.params.id;
+        //delete noteData[id]
+        noteData.splice(req.params.id)
+        res.json(noteData)
     });
 
 }
